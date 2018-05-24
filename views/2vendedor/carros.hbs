@@ -1,0 +1,68 @@
+{{> header }}
+
+<body style="width: 100vw; height:100vh">
+    <section>
+        <h5 class="card-header" style="    margin: 3px; margin-bottom: 20px; font-size: 31px;"> Carros
+            <div class="btn-group" style="float: right;">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Menú
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a href="/inicioV"><button class="dropdown-item" type="button">Perfil</button></a>
+                    <button class="dropdown-item" type="button">Cerrar Sesión</button>
+                </div>
+            </div>
+        </h5>
+    </section>
+
+    <section style='justify-content:center; width:100%; margin: 1em;'>
+        <a href="/inicioV"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+    </section>
+
+    <section>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                <th scope="col">ID Carro</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Versión</th>
+                <th scope="col">Transmisión</th>
+                <th scope="col">Color</th>
+                <th scope="col">Número de Serie</th>
+                <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{# each carros}}
+                <tr>
+                {{!-- <th scope="row"></th> --}}
+                <td>{{id_carro}}</td>
+                <td>{{marca}}</td>
+                <td>{{nombre}}</td>
+                <td>{{modelo}}</td>
+                <td>{{version}}</td>
+                <td>{{transmision}}</td>
+                <td>{{color}}</td>
+                <td>{{numero_serie}}</td>
+                <td>{{statuss}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <div class="card text-center" style="">
+            <div class="card-header">
+                 Creado por Michelovers 6°E
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Control de Inventario de Mazda</h5>
+                <p class="card-text">Este software fue desarrollado por un equipo de estudiantes de la Universidad de Colima como proyecto Integrador.<p>
+                <a href="http://www.mazda.com" class="btn btn-primary">Mazda</a>
+            </div>
+        </div>
+    </section>
+</body>
