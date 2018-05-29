@@ -1,0 +1,75 @@
+{{> header }}
+
+<body style="width: 100vw; height:100vh">
+    <section>
+        <h5 class="card-header" style="    margin: 3px; margin-bottom: 20px; font-size: 31px;">Alta de Cliente
+            <div class="btn-group" style="float: right;">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Menú
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a href="/inicioV"><button class="dropdown-item" type="button">Perfil</button></a>
+                    <button class="dropdown-item" type="button">Cerrar Sesión</button>
+                </div>
+            </div>
+        </h5>
+    </section>
+
+
+
+
+
+    <section style='justify-content:center; width:100%; margin: 1em;'>
+        <a href="/clientes"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+    </section>
+
+    <section style="justify-content: center; width:100%;">
+        <section style="justify-content: center; width:70%; margin: auto">
+            <form action="/clientes/altaCliente" method="POST">                    
+                    <input hidden name="id_cliente" value="0">
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label for="inputEmail4">Nombre Completo*</label>
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                    </div>
+                    <div class="form-group col-md-4">
+                    <label for="inputPassword4">Teléfono</label>
+                    <input type="text" name="telefono" class="form-control" placeholder="Teléfono">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputAddress2">Domicilio</label>
+                        <input type="text" name="domicilio" class="form-control" placeholder="Domicilio">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputAddress">Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="Email">
+                    </div>
+                <div style= "padding-rigth:15px; padding-left:15px;">
+                    <div class="form-row">
+                    <div class="form-group col-md-2">
+                    <label for="inputCity">ID Vendedor</label>
+                    <input type="numeric" name="id_vendedor" class="form-control" placeholder="ID Vendedor">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Agregar</button>
+            </form>
+        </section>
+    </section>
+
+
+
+
+
+    <section>
+        <div class="card text-center" style="">
+            <div class="card-header">
+                 Creado por Michelovers 6°E
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Control de Inventario de Mazda</h5>
+                <p class="card-text">Este software fue desarrollado por un equipo de estudiantes de la Universidad de Colima como proyecto Integrador.<p>
+                <a href="http://www.mazda.com" class="btn btn-primary">Mazda</a>
+            </div>
+        </div>
+    </section>
+</body>

@@ -17,10 +17,11 @@
 
     <section style='justify-content:center; width:100%; margin: 1em;'>
         <a href="/inicioV"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+        <a href="/clientes/altaCliente"><button type="button" class="btn btn-primary btn-lg">Nuevo Cliente</button></a>
     </section>
 
     <section>
-        <table class="table">
+        <table class="table" id="tablaClientes">
             <thead class="thead-light">
                 <tr>
                 <th scope="col">ID Cliente</th>
@@ -29,18 +30,35 @@
                 <th scope="col">Email</th>
                 <th scope="col">Domicilio</th>
                 <th scope="col">ID Vendedor</th>
+                <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                {{# each clientes}}
+                {{#each clientes}}
                 <tr>
-                {{!-- <th scope="row"></th> --}}
-                <td>{{id_cliente}}</td>
-                <td>{{nombre}}</td>
-                <td>{{telefono}}</td>
-                <td>{{email}}</td>
-                <td>{{domicilio}}</td>
-                <td>{{id_vendedor}}</td>
+                    {{!-- <th scope="row"></th> --}}
+                    <td id="id_cliente">{{id_cliente}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{telefono}}</td>
+                    <td>{{email}}</td>
+                    <td>{{domicilio}}</td>
+                    <td>{{id_vendedor}}</td>
+                    <td>
+                        
+                        <a href="/" style="vertical-align: text-top;text-decoration-line: none;"><i data-feather="edit" style="vertical-align: bottom; margin-right: 5px;"></i>Editar</a>
+
+                        {{!-- <a id={{id_cliente}} class="eliminarCliente" href=""> Eliminar</a> --}}
+                        {{!-- <i data-feather="x-circle"></i> --}}
+                        <a id="eliminarCliente" href="" style="vertical-align: text-top;text-decoration-line: none;"><i data-feather="x-circle" style="vertical-align: bottom; margin-right: 5px;"></i>Eliminar</a>
+                    </td>
+
+                    {{!-- td
+                    a(class=['ui button basic icon'] href='#' data-inverted='' 
+                    data-tooltip='Eliminar' data-position='top center' id='btn-eliminar')
+                    i(class=['trash icon']) --}}
+
+
+
                 </tr>
                 {{/each}}
             </tbody>
@@ -59,4 +77,11 @@
             </div>
         </div>
     </section>
+    {{!-- <script src="../../assets/javascripts/jquery-3.3.1.js"></script>
+    <script src="../../assets/javascripts/clientes.js"></script> --}}
+    {{!-- <script src="../../assets/javascripts/ajax.js"></script> --}}
+    {{!-- <script src="../../assets/feather-icons/dist/feather.js"></script> --}}
+    {{!-- <script> feather.replace(); </script> --}}
 </body>
+
+{{> footer}}

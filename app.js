@@ -6,15 +6,25 @@ var logger = require('morgan');
 
 
 // VARIABLES RUTAS -----------------------------------------
+// Buenas
 var indexRouter = require('./routes/inicio');
 var indexRouterLogin = require('./routes/login');
+var indexRouterClientes = require('./routes/clientes');
+var indexRouterSucursales = require('./routes/sucursales');
+
+
+// Corregir
 var indexRouterVendedor = require('./routes/vendedor');
 var indexRouterGAgencia = require('./routes/gAgencia');
 var indexRouterGGlobal = require('./routes/gGlobal');
-var indexRouterClientes = require('./routes/clientes');
 var indexRouterCarros = require('./routes/carros');
-var indexRouterAltaVendedor = require('./routes/altaVendedor');
-var indexRouterAltaGerente = require('./routes/altaGerente');
+
+
+// Eliminar
+// var indexRouterAltaVendedor = require('./routes/altaVendedor');
+// var indexRouterVendedores = require('./routes/vendedores');
+// var indexRouterAltaGerente = require('./routes/altaGerente');
+// var indexRouterAltaCliente = require('./routes/altaCliente');
 // VARIABLES RUTAS -----------------------------------------
 
 
@@ -28,19 +38,25 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/assets', express.static(`${__dirname}/public`));
+
 
 
 // RUTAS ------------------------------------------------------
 app.use('/', indexRouter);
 app.use('/login', indexRouterLogin);
+app.use('/clientes', indexRouterClientes);
 app.use('/inicioV', indexRouterVendedor);
 app.use('/inicioGA', indexRouterGAgencia);
 app.use('/inicioGG', indexRouterGGlobal);
-app.use('/clientes', indexRouterClientes);
 app.use('/carros', indexRouterCarros);
-app.use('/altaVendedor', indexRouterAltaVendedor);
-app.use('/altaGerente', indexRouterAltaGerente);
+app.use('/sucursales', indexRouterSucursales);
+
+
+// app.use('/vendedores', indexRouterVendedores);
+// app.use('/altaVendedor', indexRouterAltaVendedor);
+// app.use('/altaGerente', indexRouterAltaGerente);
+// app.use('/altaCliente', indexRouterAltaCliente);
 // RUTAS ------------------------------------------------------
 
 

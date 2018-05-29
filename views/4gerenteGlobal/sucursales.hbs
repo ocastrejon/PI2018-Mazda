@@ -1,0 +1,64 @@
+{{> header }}
+
+<body style="width: 100vw; height:100vh">
+    <section>
+        <h5 class="card-header" style="    margin: 3px; margin-bottom: 20px; font-size: 31px;">Sucursales
+            <div class="btn-group" style="float: right;">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Menú
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a href="/inicioGG"><button class="dropdown-item" type="button">Perfil</button></a>
+                    <button class="dropdown-item" type="button">Cerrar Sesión</button>
+                </div>
+            </div>
+        </h5>
+    </section>
+
+    <section style='justify-content:center; width:100%; margin: 1em;'>
+        <a href="/inicioGG"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+        <a href="/sucursales/altaSucursal"><button type="button" class="btn btn-primary btn-lg">Nuevo</button></a>
+    </section>
+
+    <section>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                <th scope="col">ID Sucursal</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Municipio</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Código Postal</th>
+                <th scope="col">Región</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each sucursales}}
+                <tr>
+                {{!-- <th scope="row"></th> --}}
+                <td>{{id_sucursal}}</td>
+                <td>{{direccion}}</td>
+                <td>{{municipio}}</td>
+                <td>{{estado}}</td>
+                <td>{{codigo_postal}}</td>
+                <td>{{region}}</td>
+                <td><a href="/">Editar </a><a href="/"> Eliminar</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <div class="card text-center" style="">
+            <div class="card-header">
+                 Creado por Michelovers 6°E
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Control de Inventario de Mazda</h5>
+                <p class="card-text">Este software fue desarrollado por un equipo de estudiantes de la Universidad de Colima como proyecto Integrador.<p>
+                <a href="http://www.mazda.com" class="btn btn-primary">Mazda</a>
+            </div>
+        </div>
+    </section>
+</body>

@@ -1,0 +1,75 @@
+{{> header }}
+
+<body style="width: 100vw; height:100vh">
+    <section>
+        <h5 class="card-header" style="    margin: 3px; margin-bottom: 20px; font-size: 31px;">Alta de Sucursal
+            <div class="btn-group" style="float: right;">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Menú
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a href="/inicioGG"><button class="dropdown-item" type="button">Perfil</button></a>
+                    <button class="dropdown-item" type="button">Cerrar Sesión</button>
+                </div>
+            </div>
+        </h5>
+    </section>
+
+
+
+
+
+    <section style='justify-content:center; width:100%; margin: 1em;'>
+        <a href="/sucursales"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+    </section>
+
+    <section style="justify-content: center; width:100%;">
+        <section style="justify-content: center; width:70%; margin: auto">
+            <form action="/sucursales/altaSucursal" method="POST">                    
+                    <input hidden type="text" name="id_sucursal" value="0" class="form-control" id="inputEmail4" placeholder="Nombre">
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label for="inputEmail4">Dirección</label>
+                    <input type="text" name="direccion" class="form-control" id="inputEmail4" placeholder="Dirección">
+                    </div>
+                    <div class="form-group col-md-4">
+                    <label for="inputPassword4">Municipio </label>
+                    <input type="text" name="municipio" class="form-control" id="inputPassword4" placeholder="Municipio">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputAddress2">Estado</label>
+                        <input type="text" name="estado" class="form-control" id="inputAddress2" placeholder="Estado">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputAddress">Código Postal</label>
+                        <input type="numeric" name="codigo_postal" class="form-control" id="inputAddress" placeholder="Código Postal">
+                    </div>
+                <div style= "padding-rigth:15px; padding-left:15px;">
+                    <div class="form-row">
+                    <div class="form-group col-md-2">
+                    <label for="inputCity">Región </label>
+                    <input type="text" name="region" class="form-control" placeholder="Región">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Agregar</button>
+            </form>
+        </section>
+    </section>
+
+
+
+
+
+    <section>
+        <div class="card text-center" style="">
+            <div class="card-header">
+                 Creado por Michelovers 6°E
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Control de Inventario de Mazda</h5>
+                <p class="card-text">Este software fue desarrollado por un equipo de estudiantes de la Universidad de Colima como proyecto Integrador.<p>
+                <a href="http://www.mazda.com" class="btn btn-primary">Mazda</a>
+            </div>
+        </div>
+    </section>
+</body>

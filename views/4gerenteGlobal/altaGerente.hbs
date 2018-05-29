@@ -8,7 +8,7 @@
                     Menú
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="/inicioGA"><button class="dropdown-item" type="button">Perfil</button></a>
+                    <a href="/inicioGG"><button class="dropdown-item" type="button">Perfil</button></a>
                     <button class="dropdown-item" type="button">Cerrar Sesión</button>
                 </div>
             </div>
@@ -20,13 +20,13 @@
 
 
     <section style='justify-content:center; width:100%; margin: 1em;'>
-        <a href="/inicioGA"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+        <a href="/inicioGA/gerentesAgencia"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
     </section>
 
     <section style="justify-content: center; width:100%;">
         <section style="justify-content: center; width:70%; margin: auto">
-            <form action="/altaVendedor" method="POST">                    
-                    <input hidden type="text" name="id_vendedor" value="0" class="form-control" id="inputEmail4" placeholder="Nombre">
+            <form action="/inicioGA/gerentesAgencia/altaGerenteAgencia" method="POST">                    
+                    <input hidden type="text" name="id_gerente_agencia" value="0" class="form-control" id="inputEmail4" placeholder="Nombre">
                     </div>
                     <div class="form-group col-md-6">
                     <label for="inputEmail4">Nombre Completo*</label>
@@ -51,8 +51,12 @@
                     <input type="numeric" name="salario" class="form-control" id="Salario">
                     </div>
                     <div class="form-group col-md-2">
-                    <label for="inputCity">ID Gerente Agencia</label>
-                    <input type="numeric" name="id_gerente_agencia" class="form-control" id="Salario">
+                    <label for="inputCity">ID Gerente Global</label>
+                    <input type="numeric" name="id_gerente_global" class="form-control" id="Salario">
+                    </div>
+                    <div class="form-group col-md-2">
+                    <label for="inputCity">ID Sucursal</label>
+                    <input type="numeric" name="id_sucursal" class="form-control" id="Salario">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg">Agregar</button>
