@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-// rutas para home ------------------------------------------
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-// rutas para home ------------------------------------------
+router
+// INDEX ==========================================================================================================================
+		// INDEX
+			.get('/', function (req, res, next) {
+				res.render('index', { title: 'Express' });
+			});
+
 
 module.exports = router;

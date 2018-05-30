@@ -15,28 +15,57 @@
     </section>
 
     <section style='justify-content:center; width:100%; margin: 1em;'>
-        <a href="/"><button type="button" class="btn btn-primary btn-lg">Generar Stock</button></a>
-        <a href="/sucursales"><button type="button" class="btn btn-primary btn-lg">Sucursales</button></a>
-        <a href="/"><button type="button" class="btn btn-primary btn-lg">Reportes</button></a>
-        <a href="/inicioGA/gerentesAgencia"><button type="button" class="btn btn-primary btn-lg">Gerentes de Agencia</button></a>
+        <a href="/inicioGG/generarStock"><button type="button" class="btn btn-info btn-lg">Generar Stock</button></a>
+        <a href="/sucursales"><button type="button" class="btn btn-info btn-lg">Sucursales</button></a>
+        <a href="/inicioGG/reportes"><button type="button" class="btn btn-info btn-lg">Reportes</button></a>
+        <a href="/inicioGA/gerentesAgencia"><button type="button" class="btn btn-info btn-lg">Gerentes de Agencia</button></a>
     </section>
 
-    <section>
-        <div>
-            <h3>Perfil</h3>
-        </div>
-    </section>
-
-    <section>
-        <div class="card text-center" style="">
-            <div class="card-header">
-                 Creado por Michelovers 6°E
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Control de Inventario de Mazda</h5>
-                <p class="card-text">Este software fue desarrollado por un equipo de estudiantes de la Universidad de Colima como proyecto Integrador.<p>
-                <a href="http://www.mazda.com" class="btn btn-primary">Mazda</a>
-            </div>
-        </div>
+    <section style="justify-content:center; width:100%;">
+        <section style="justify-content:center; width:80%; margin:auto;">
+            {{#each gerenteGlobal}}
+            <form>
+                <div>
+                    <h3 style="margin:10px;">Perfil</h3>
+                    <i data-feather="user" style="margin:10px;"></i>
+                </div>
+                <hr>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">ID Gerente Global:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" value="{{id_gerente_global}}" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Nombre:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" value="{{nombre}}" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Teléfono:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" value="{{telefono}}" disabled>
+                    </div>
+                </div><div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Email:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" value="{{email}}" disabled>
+                    </div>
+                </div><div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Domicilio:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" value="{{domicilio}}" disabled>
+                    </div>
+                </div><div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Salario:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" value="{{salario}}" disabled>
+                    </div>
+                </div>
+            </form>    
+            {{/each}}
+        </section>
     </section>
 </body>
+{{> footer}}

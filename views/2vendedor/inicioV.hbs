@@ -1,6 +1,7 @@
 {{> header }}
 
 <body style="width: 100vw; height:100vh">
+
     <section>
         <h5 class="card-header" style="    margin: 3px; margin-bottom: 20px; font-size: 31px;">Inicio de Vendedor
             <div class="btn-group" style="float: right;">
@@ -15,26 +16,62 @@
     </section>
 
     <section style='justify-content:center; width:100%; margin: 1em;'>
-        <a href="/clientes"><button type="button" class="btn btn-primary btn-lg">Catálogo Clientes</button></a>
-        <a href="/carros"><button type="button" class="btn btn-primary btn-lg">Carros</button></a>
+        <a href="/clientes"><button type="button" class="btn btn-info btn-lg">Catálogo Clientes</button></a>
+        <a href="/carros"><button type="button" class="btn btn-info btn-lg">Carros</button></a>
     </section>
 
-    <section>
-        <div>
-            <h3>Perfil</h3>
-        </div>
+    <section style="justify-content:center; width:100%;">
+        <section style="justify-content:center; width:80%; margin:auto;">
+            {{#each vendedor}}
+            <form>
+                <div>
+                    <h3 style="margin:10px;">Perfil</h3>
+                    <i data-feather="user" style="margin:10px;"></i>
+                </div>
+                <hr>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">ID Vendedor:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" value="{{id_vendedor}}" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Nombre:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" value="{{nombre}}" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Teléfono:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" value="{{telefono}}" disabled>
+                    </div>
+                </div><div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Email:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" value="{{email}}" disabled>
+                    </div>
+                </div><div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Domicilio:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" value="{{domicilio}}" disabled>
+                    </div>
+                </div><div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Salario:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" value="{{salario}}" disabled>
+                    </div>
+                </div><div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">ID Gerente Agencia:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" value="{{id_gerente_agencia}}" disabled>
+                    </div>
+                </div>
+            </form>    
+            {{/each}}
+        </section>
     </section>
 
-    <section>
-        <div class="card text-center" style="">
-            <div class="card-header">
-                 Creado por Michelovers 6°E
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Control de Inventario de Mazda</h5>
-                <p class="card-text">Este software fue desarrollado por un equipo de estudiantes de la Universidad de Colima como proyecto Integrador.<p>
-                <a href="http://www.mazda.com" class="btn btn-primary">Mazda</a>
-            </div>
-        </div>
-    </section>
+
 </body>
+{{> footer}}

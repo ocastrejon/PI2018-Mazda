@@ -31,8 +31,6 @@
                 // Si salio bien borrar en el dom 
                 console.log(xhr.response);
                 e.target.parentNode.parentNode.remove();
-
-
             }
         }
         // End Ajax---------------------------------------------------------------------------------

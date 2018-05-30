@@ -1,6 +1,7 @@
 {{> header }}
 
 <body style="width: 100vw; height:100vh">
+
     <section>
         <h5 class="card-header" style="    margin: 3px; margin-bottom: 20px; font-size: 31px;">Clientes
             <div class="btn-group" style="float: right;">
@@ -17,7 +18,7 @@
 
     <section style='justify-content:center; width:100%; margin: 1em;'>
         <a href="/inicioV"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
-        <a href="/clientes/altaCliente"><button type="button" class="btn btn-primary btn-lg">Nuevo Cliente</button></a>
+        <a href="/clientes/altaCliente"><button type="button" class="btn btn-success btn-lg">Nuevo Cliente</button></a>
     </section>
 
     <section>
@@ -44,44 +45,36 @@
                     <td>{{domicilio}}</td>
                     <td>{{id_vendedor}}</td>
                     <td>
-                        
-                        <a href="/" style="vertical-align: text-top;text-decoration-line: none;"><i data-feather="edit" style="vertical-align: bottom; margin-right: 5px;"></i>Editar</a>
-
+                        <a href="" style="vertical-align: text-top; text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top" title="Email">
+                            <i data-feather="mail" style="vertical-align: bottom; margin-right: 5px;"></i>
+                        </a>
+                        <a  href="" style="vertical-align: text-top; text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top" title="Agendar Cita">
+                            <i data-feather="calendar" style="vertical-align: bottom; margin-right: 5px;"></i>
+                        </a>
+                        <a href="" style="vertical-align: text-top; text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top" title="Llamar">
+                            <i data-feather="phone-call" style="vertical-align: bottom; margin-right: 5px;"></i>
+                        </a>
+                        <a href="" style="vertical-align: text-top; text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top" title="Mensaje Texto">
+                            <i data-feather="inbox" style="vertical-align: bottom; margin-right: 5px;"></i>
+                        </a>
+                        <a href="/clientes/modificarCliente/{{id_cliente}}" style="vertical-align: text-top;text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top" title="Editar Cliente">
+                            <i data-feather="edit" style="vertical-align: bottom; margin-right: 5px;"></i>
+                        </a>
                         {{!-- <a id={{id_cliente}} class="eliminarCliente" href=""> Eliminar</a> --}}
-                        {{!-- <i data-feather="x-circle"></i> --}}
-                        <a id="eliminarCliente" href="" style="vertical-align: text-top;text-decoration-line: none;"><i data-feather="x-circle" style="vertical-align: bottom; margin-right: 5px;"></i>Eliminar</a>
+                        <a id="eliminarCliente" href="" style="vertical-align: text-top;text-decoration-line: none; margin-left:7px; color:red;" data-toggle="tooltip" data-placement="top" title="Eliminar Cliente">
+                            <i data-feather="x-circle" style="vertical-align: bottom; margin-right: 5px;"></i>
+                        </a>
                     </td>
-
-                    {{!-- td
-                    a(class=['ui button basic icon'] href='#' data-inverted='' 
-                    data-tooltip='Eliminar' data-position='top center' id='btn-eliminar')
-                    i(class=['trash icon']) --}}
-
-
-
                 </tr>
                 {{/each}}
             </tbody>
         </table>
     </section>
-
-    <section>
-        <div class="card text-center" style="">
-            <div class="card-header">
-                 Creado por Michelovers 6°E
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Control de Inventario de Mazda</h5>
-                <p class="card-text">Este software fue desarrollado por un equipo de estudiantes de la Universidad de Colima como proyecto Integrador.<p>
-                <a href="http://www.mazda.com" class="btn btn-primary">Mazda</a>
-            </div>
-        </div>
-    </section>
-    {{!-- <script src="../../assets/javascripts/jquery-3.3.1.js"></script>
-    <script src="../../assets/javascripts/clientes.js"></script> --}}
-    {{!-- <script src="../../assets/javascripts/ajax.js"></script> --}}
-    {{!-- <script src="../../assets/feather-icons/dist/feather.js"></script> --}}
-    {{!-- <script> feather.replace(); </script> --}}
 </body>
-
 {{> footer}}
+<script src="../../assets/javascripts/clientes.js"></script>
+<script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+        });
+</script>

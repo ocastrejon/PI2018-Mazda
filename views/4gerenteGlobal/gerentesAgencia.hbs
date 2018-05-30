@@ -17,11 +17,11 @@
 
     <section style='justify-content:center; width:100%; margin: 1em;'>
         <a href="/inicioGG"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
-        <a href="/inicioGA/gerentesAgencia/altaGerenteAgencia"><button type="button" class="btn btn-primary btn-lg">Nuevo</button></a>
+        <a href="/inicioGA/gerentesAgencia/altaGerenteAgencia"><button type="button" class="btn btn-success btn-lg">Nuevo</button></a>
     </section>
 
     <section>
-        <table class="table">
+        <table class="table" id="tablaGerentesAgencia">
             <thead class="thead-light">
                 <tr>
                 <th scope="col">ID Gerente Agencia</th>
@@ -32,37 +32,37 @@
                 <th scope="col">Salario</th>
                 <th scope="col">ID Gerente Global</th>
                 <th scope="col">ID Sucrusal</th>
+                <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 {{#each gerente_agencia}}
                 <tr>
                 {{!-- <th scope="row"></th> --}}
-                <td>{{id_gerente_agencia}}</td>
-                <td>{{nombre}}</td>
-                <td>{{telefono}}</td>
-                <td>{{email}}</td>
-                <td>{{domicilio}}</td>
-                <td>{{salario}}</td>
-                <td>{{id_gerente_global}}</td>
-                <td>{{id_sucursal}}</td>
-                <td><a href="/">Editar </a><a href="/"> Eliminar</a></td>
+                    <td id="id_gerente_agencia">{{id_gerente_agencia}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{telefono}}</td>
+                    <td>{{email}}</td>
+                    <td>{{domicilio}}</td>
+                    <td>{{salario}}</td>
+                    <td>{{id_gerente_global}}</td>
+                    <td>{{id_sucursal}}</td>
+                    <td>
+                            <a href="" style="vertical-align: text-top;text-decoration-line: none; color:black;">
+                                <i data-feather="edit" style="vertical-align: bottom; margin-right: 5px;"></i>
+                                Editar
+                            </a>
+                            {{!-- <a id={{id_cliente}} class="eliminarCliente" href=""> Eliminar</a> --}}
+                            <a id="eliminarGerenteAgencia" href="" style="vertical-align: text-top;text-decoration-line: none; margin-left:7px; color:red;">
+                                <i data-feather="x-circle" style="vertical-align: bottom; margin-right: 5px;"></i>
+                                Eliminar
+                            </a>
+                    </td>
                 </tr>
                 {{/each}}
             </tbody>
         </table>
     </section>
-
-    <section>
-        <div class="card text-center" style="">
-            <div class="card-header">
-                 Creado por Michelovers 6°E
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Control de Inventario de Mazda</h5>
-                <p class="card-text">Este software fue desarrollado por un equipo de estudiantes de la Universidad de Colima como proyecto Integrador.<p>
-                <a href="http://www.mazda.com" class="btn btn-primary">Mazda</a>
-            </div>
-        </div>
-    </section>
 </body>
+{{> footer}}
+<script src="../../assets/javascripts/gerentesAgencia.js"></script>
