@@ -8,7 +8,7 @@ var logger = require('morgan');
 // VARIABLES RUTAS -----------------------------------------
 // Buenas
 var indexRouter = require('./routes/inicio');
-var indexRouterLogin = require('./routes/login');
+// var indexRouterLogin = require('./routes/login');
 var indexRouterClientes = require('./routes/clientes');
 var indexRouterSucursales = require('./routes/sucursales');
 
@@ -44,7 +44,7 @@ app.use('/assets', express.static(`${__dirname}/public`));
 
 // RUTAS ------------------------------------------------------
 app.use('/', indexRouter);
-app.use('/login', indexRouterLogin);
+// app.use('/login', indexRouterLogin);
 app.use('/clientes', indexRouterClientes);
 app.use('/inicioV', indexRouterVendedor);
 app.use('/inicioGA', indexRouterGAgencia);
