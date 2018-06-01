@@ -9,7 +9,9 @@
                     Menú
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="/inicioV"><button class="dropdown-item" type="button">Perfil</button></a>
+                    <a href="/inicioV">
+                        <button class="dropdown-item" type="button">Perfil</button>
+                    </a>
                     <button class="dropdown-item" type="button">Cerrar Sesión</button>
                 </div>
             </div>
@@ -17,27 +19,41 @@
     </section>
 
     <section style='justify-content:center; width:100%; margin: 1em;'>
-        <a href="/inicioV"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
-        <a href="/clientes/altaCliente"><button type="button" class="btn btn-success btn-lg">Nuevo Cliente</button></a>
+        <a href="/inicioV">
+            <button type="button" class="btn btn-primary btn-lg">Regresar</button>
+        </a>
+        <a href="/clientes/altaCliente">
+            <button type="button" class="btn btn-success btn-lg">Nuevo Cliente</button>
+        </a>
     </section>
+
+    <div style="width:100%; margin: 1em;">
+        <div class="input-group" style="width:30%; margin: auto;">
+            <input type="text" id="inputBuscar" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Buscar Nombre">
+            <div class="input-group-append">
+                <button type="button" id="buscar" class="btn btn-outline-secondary">Buscar</button>
+            </div>
+        </div>
+    </div>
 
     <section>
         <table class="table" id="tablaClientes">
             <thead class="thead-light">
                 <tr>
-                <th scope="col">ID Cliente</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Teléfono</th>
-                <th scope="col">Email</th>
-                <th scope="col">Domicilio</th>
-                <th scope="col">ID Vendedor</th>
-                <th scope="col">Acciones</th>
+                    <th scope="col">ID Cliente</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Domicilio</th>
+                    <th scope="col">ID Vendedor</th>
+                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 {{#each clientes}}
                 <tr>
-                    {{!-- <th scope="row"></th> --}}
+                    {{!--
+                    <th scope="row"></th> --}}
                     <td id="id_cliente">{{id_cliente}}</td>
                     <td>{{nombre}}</td>
                     <td>{{telefono}}</td>
@@ -45,23 +61,30 @@
                     <td>{{domicilio}}</td>
                     <td>{{id_vendedor}}</td>
                     <td>
-                        <a href="" style="vertical-align: text-top; text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top" title="Email">
+                        <a href="" style="vertical-align: text-top; text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top"
+                            title="Email">
                             <i data-feather="mail" style="vertical-align: bottom; margin-right: 5px;"></i>
                         </a>
-                        <a  href="" style="vertical-align: text-top; text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top" title="Agendar Cita">
+                        <a href="" style="vertical-align: text-top; text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top"
+                            title="Agendar Cita">
                             <i data-feather="calendar" style="vertical-align: bottom; margin-right: 5px;"></i>
                         </a>
-                        <a href="" style="vertical-align: text-top; text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top" title="Llamar">
+                        <a href="" style="vertical-align: text-top; text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top"
+                            title="Llamar">
                             <i data-feather="phone-call" style="vertical-align: bottom; margin-right: 5px;"></i>
                         </a>
-                        <a href="" style="vertical-align: text-top; text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top" title="Mensaje Texto">
+                        <a href="" style="vertical-align: text-top; text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top"
+                            title="Mensaje Texto">
                             <i data-feather="inbox" style="vertical-align: bottom; margin-right: 5px;"></i>
                         </a>
-                        <a href="/clientes/modificarCliente/{{id_cliente}}" style="vertical-align: text-top;text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top" title="Editar Cliente">
+                        <a href="/clientes/modificarCliente/{{id_cliente}}" style="vertical-align: text-top;text-decoration-line: none; color:black;"
+                            data-toggle="tooltip" data-placement="top" title="Editar Cliente">
                             <i data-feather="edit" style="vertical-align: bottom; margin-right: 5px;"></i>
                         </a>
-                        {{!-- <a id={{id_cliente}} class="eliminarCliente" href=""> Eliminar</a> --}}
-                        <a id="eliminarCliente" href="" style="vertical-align: text-top;text-decoration-line: none; margin-left:7px; color:red;" data-toggle="tooltip" data-placement="top" title="Eliminar Cliente">
+                        {{!--
+                        <a id={{id_cliente}} class="eliminarCliente" href=""> Eliminar</a> --}}
+                        <a id="eliminarCliente" href="" style="vertical-align: text-top;text-decoration-line: none; margin-left:7px; color:red;"
+                            data-toggle="tooltip" data-placement="top" title="Eliminar Cliente">
                             <i data-feather="x-circle" style="vertical-align: bottom; margin-right: 5px;"></i>
                         </a>
                     </td>
@@ -74,7 +97,7 @@
 {{> footer}}
 <script src="../../assets/javascripts/clientes.js"></script>
 <script>
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
-        });
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
 </script>

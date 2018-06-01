@@ -17,7 +17,7 @@
     </section>
 
     <section style='justify-content:center; width:100%; margin: 1em;'>
-        <a href="/vendedores"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+        <a href="/inicioV/vendedores"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
     </section>
 
 
@@ -25,9 +25,9 @@
         <section style="justify-content:center; width:80%; margin:auto;">
             <form action="/inicioV/vendedores/editarVendedor" method="POST">
             {{#each vendedor}}
-                <div>
-                    <h3 style="margin:10px;">Modificar</h3>
-                    <i data-feather="user" style="margin:10px;"></i>
+                <div style="display: -webkit-box">
+                    <h3 style="margin:10px;">Modificar Vendedor</h3>
+                    <i data-feather="user" style="margin: 1em;"></i>
                 </div>
                 <hr>
                 <div class="form-group row">
@@ -68,6 +68,6 @@
             </form>    
         </section>
     </section>
-
 </body>
 {{> footer}}
+<script src="../../../assets/javascripts/jquery-3.3.1.js"></script>
