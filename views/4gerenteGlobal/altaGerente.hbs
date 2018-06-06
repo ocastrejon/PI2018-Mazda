@@ -21,42 +21,56 @@
 
     <section style="justify-content: center; width:100%;">
         <section style="justify-content: center; width:70%; margin: auto">
-            <form action="/inicioGA/gerentesAgencia/altaGerenteAgencia" method="POST">                    
-                    <input hidden type="text" name="id_gerente_agencia" value="0" class="form-control" id="inputEmail4" placeholder="Nombre">
-                    </div>
-                    <div class="form-group col-md-6">
-                    <label for="inputEmail4">Nombre Completo*</label>
-                    <input type="text" name="nombre" class="form-control" id="inputEmail4" placeholder="Nombre">
-                    </div>
-                    <div class="form-group col-md-4">
-                    <label for="inputPassword4">Teléfono</label>
-                    <input type="text" name="telefono" class="form-control" id="inputPassword4" placeholder="Teléfono">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputAddress2">Domicilio</label>
-                        <input type="text" name="domicilio" class="form-control" id="inputAddress2" placeholder="Domicilio">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputAddress">Email</label>
-                        <input type="email" name="email" class="form-control" id="inputAddress" placeholder="Email">
-                    </div>
-                <div style= "padding-rigth:15px; padding-left:15px;">
-                    <div class="form-row">
-                    <div class="form-group col-md-2">
-                    <label for="inputCity">Salario</label>
-                    <input type="numeric" name="salario" class="form-control" id="Salario">
-                    </div>
-                    <div class="form-group col-md-2">
-                    <label for="inputCity">ID Gerente Global</label>
-                    <input type="numeric" name="id_gerente_global" class="form-control" id="Salario">
-                    </div>
-                    <div class="form-group col-md-2">
-                    <label for="inputCity">ID Sucursal</label>
-                    <input type="numeric" name="id_sucursal" class="form-control" id="Salario">
+            <form action="/inicioGA/gerentesAgencia/altaGerenteAgencia" method="POST"> 
+                <div style="display: -webkit-box">
+                    <h3 style="margin:10px;">Alta de Gerente de Agencia</h3>
+                    <i data-feather="user" style="margin: 1em;"></i>
+                </div>
+                <hr>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Nombre completo:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" name="nombre" placeholder="Nombre completo">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success btn-lg">Agregar</button>
-            </form>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Teléfono:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" name="telefono" placeholder="Teléfono">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Domicilio:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" name="domicilio" placeholder="Domicilio">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Email:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" name="email" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Salario:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" name="salario" placeholder="Salario">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">ID Gerente Global:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" name="id_gerente_global" placeholder="ID Gerente Global">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">ID Sucursal:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" name="id_sucursal" placeholder="ID Sucursal">
+                    </div>
+                </div>
+                 <button type="submit" class="btn btn-success btn-lg">Agregar</button>
+            </form>    
         </section>
     </section>
 </body>

@@ -63,4 +63,36 @@ router
                 });
             })
 
+
+
+        // =============================================================================================
+        // EDITAR SUCURSAL
+            .get('/modificarSucursal/:id', (req, res)=>{
+                let id = req.params.id;
+                const db = require('../database/config');
+                let sucursal = null;
+                db.query('SELECT * FROM sucursal WHERE id_sucursal = ?', id, (err, rows, fields)=>{
+                        if (err) throw err;
+                        sucursal = rows;
+                        res.render('4gerenteGlobal/modificarSucursal', {sucursal: sucursal});
+                });
+            })
+
+            .post('/editarSucursal', (req, res)=>{
+                const db = require('.././database/config');  
+                sucursal={
+                    id_sucursal: req.body.id_sucursal,
+                    direccion: req.body.direccion,
+                    municipio: req.body.municipio,
+                    estado: req.body.estado,
+                    codigo_postal: req.body.codigo_postal,
+                    region: req.body.region
+                }
+
+                db.query('UPDATE sucursal SET ? WHERE ?', [sucursal, {id_sucursal: req.body.id_sucursal}], (err, rows, fields)=> {
+                    if(err) throw err;
+                });
+                res.redirect('/sucursales');
+            });
+
 module.exports = router;

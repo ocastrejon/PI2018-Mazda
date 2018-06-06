@@ -87,8 +87,8 @@ router
 			})
 
 		
-			// ==============================================================================================
-		// EDITAR UN CLIENTE 
+		// ==============================================================================================
+		// BUSCAR UN CLIENTE 
 			.get('/buscar/', (req, res)=>{
 				let buscar = req.query.q;
 				const db = require('../database/config');
@@ -97,7 +97,7 @@ router
 					clienteBuscar = rows;
 					clientes = rows;
 					res.json({clienteBuscar: clienteBuscar});
-					res.render('2vendedor/clientes', {clientes: clientes});
+					// res.render('2vendedor/clientes', {clientes: clientes});
 				});
 			})
 

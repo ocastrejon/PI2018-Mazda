@@ -3,13 +3,13 @@
 <body style="width: 100vw; height:100vh">
     
     <section>
-        <h5 class="card-header" style="    margin: 3px; margin-bottom: 20px; font-size: 31px;">Modificar Vendedor
+        <h5 class="card-header" style="    margin: 3px; margin-bottom: 20px; font-size: 31px;">Modificar Gerente de Agencia
             <div class="btn-group" style="float: right;">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Menú
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="/inicioGA"><button class="dropdown-item" type="button">Perfil</button></a>
+                    <a href="/inicioGG"><button class="dropdown-item" type="button">Perfil</button></a>
                     <button class="dropdown-item" type="button">Cerrar Sesión</button>
                 </div>
             </div>
@@ -17,23 +17,23 @@
     </section>
 
     <section style='justify-content:center; width:100%; margin: 1em;'>
-        <a href="/inicioV/vendedores"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+        <a href="/inicioGA/gerentesAgencia"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
     </section>
 
 
     <section style="justify-content:center; width:100%;">
         <section style="justify-content:center; width:80%; margin:auto;">
-            <form action="/inicioV/vendedores/editarVendedor" method="POST">
-            {{#each vendedor}}
+            <form action="/inicioGA/gerentesAgencia/editarGerenteAgencia" method="POST">
+            {{#each gerenteAgencia}}
                 <div style="display: -webkit-box">
-                    <h3 style="margin:10px;">Modificar Vendedor</h3>
+                    <h3 style="margin:10px;">Modificar Gerente de Agencia</h3>
                     <i data-feather="user" style="margin: 1em;"></i>
                 </div>
                 <hr>
                 <div class="form-group row">
-                    <label  class="col-sm-2 col-form-label">ID Vendedor:</label>
+                    <label  class="col-sm-2 col-form-label">ID Gerente Agencia:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="id_vendedor" value="{{id_vendedor}}">
+                    <input class="form-control" name="id_gerente_agencia" value="{{id_gerente_agencia}}">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -47,20 +47,35 @@
                     <div class="col-sm-4">
                     <input class="form-control" name="telefono" value="{{telefono}}" >
                     </div>
-                </div><div class="form-group row">
+                </div>
+                <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Email:</label>
                     <div class="col-sm-4">
                     <input class="form-control" name="email" value="{{email}}" >
                     </div>
-                </div><div class="form-group row">
+                </div>
+                <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Domicilio:</label>
                     <div class="col-sm-4">
                     <input class="form-control" name="domicilio" value="{{domicilio}}" >
                     </div>
-                </div></div><div class="form-group row">
-                    <label  class="col-sm-2 col-form-label">ID Gerente Agencia:</label>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Salario:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="id_gerente_agencia" value="{{id_gerente_agencia}}">
+                    <input class="form-control" name="salario" value="{{salario}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">ID Gerente Global:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" name="id_gerente_global" value="{{id_gerente_global}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">ID Sucursal:</label>
+                    <div class="col-sm-4">
+                    <input class="form-control" name="id_sucursal" value="{{id_sucursal}}">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-warning btn-lg">Guardar</button>
