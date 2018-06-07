@@ -92,6 +92,7 @@ router
                     res.render('4gerenteGlobal/modificarGerenteAgencia', {gerenteAgencia: gerenteAgencia});
 				});
             })
+            
             // /inicioGA/gerentesAgencia/modificarGerenteAgencia
             .post('/gerentesAgencia/editarGerenteAgencia', (req, res)=>{
                 const db = require('.././database/config');  
