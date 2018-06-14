@@ -9,8 +9,8 @@
                     Menú
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="/inicioV"><button class="dropdown-item" type="button">Perfil</button></a>
-                    <button class="dropdown-item" type="button">Cerrar Sesión</button>
+                    <a href="/inicioV" class="dropdown-item">Perfil</a>
+                    <a href="/logout" class="dropdown-item">Cerrar Sesión</a>
                 </div>
             </div>
         </h5>
@@ -20,7 +20,7 @@
         <a href="/clientes"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
     </section>
 
-    <section style="justify-content: center; width:100%;">
+    <section style="justify-content: center; width:100%; margin-bottom: 100px;">
         <section style="justify-content: center; width:70%; margin: auto">
             <form action="/clientes/altaCliente" method="POST"> 
                 <div style="display: -webkit-box">
@@ -31,31 +31,25 @@
                 <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Nombre:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="nombre">
+                    <input class="form-control" name="nombre" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Teléfono:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="telefono">
+                    <input class="form-control" name="telefono" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Domicilio:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="domicilio">
+                    <input class="form-control" name="domicilio" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Email:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="email">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label  class="col-sm-2 col-form-label">ID Vendedor:</label>
-                    <div class="col-sm-4">
-                    <input class="form-control" name="id_vendedor">
+                    <input class="form-control" name="email" required>
                     </div>
                 </div>
                  <button type="submit" class="btn btn-success btn-lg">Agregar</button>

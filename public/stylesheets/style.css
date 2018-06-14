@@ -1,10 +1,10 @@
 body {
-  position: relative;
+  
 }
 body:after {
    content : "";
    display: block;
-   position: absolute;
+   position: fixed;
    top: 0;
    left: 0;
    background-image: url("../../assets/images/2017-Mazda-CX-5-in-night-on-road-driving-mountains-background-uhd-4k-wallpaper.jpg"); 

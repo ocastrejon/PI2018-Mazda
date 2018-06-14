@@ -9,69 +9,89 @@
                     Menú
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="/inicioGG"><button class="dropdown-item" type="button">Perfil</button></a>
-                    <button class="dropdown-item" type="button">Cerrar Sesión</button>
+                    <a href="/inicioGG" class="dropdown-item">Perfil</a>
+                    <a href="/logout" class="dropdown-item">Cerrar Sesión</a>
                 </div>
             </div>
         </h5>
     </section>
 
     <section style='justify-content:center; margin: 2em;'>
-        <a href="/inicioGA/gerentesAgencia"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+        <a href="/inicioGA/gerentesAgencia">
+            <button type="button" class="btn btn-primary btn-lg">Regresar</button>
+        </a>
     </section>
 
-    <section style="justify-content: center; width:100%;">
+    <section style="justify-content: center; width:100%; margin-bottom: 100px;">
         <section style="justify-content: center; width:70%; margin: auto">
-            <form action="/inicioGA/gerentesAgencia/altaGerenteAgencia" method="POST"> 
+            <form action="/inicioGA/gerentesAgencia/altaGerenteAgencia" method="POST">
                 <div style="display: -webkit-box">
                     <h3 style="margin:10px;">Alta de Gerente de Agencia</h3>
                     <i data-feather="user" style="margin: 1em;"></i>
                 </div>
                 <hr>
+                <input hidden type="text" value="0" name="id_usuario">
                 <div class="form-group row">
-                    <label  class="col-sm-2 col-form-label">Nombre completo:</label>
+                    <label class="col-sm-2 col-form-label">Nombre completo:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="nombre" placeholder="Nombre completo">
+                        <input class="form-control" name="nombre" placeholder="Nombre completo" type="text" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label  class="col-sm-2 col-form-label">Teléfono:</label>
+                    <label class="col-sm-2 col-form-label">Teléfono:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="telefono" placeholder="Teléfono">
+                        <input class="form-control" name="telefono" placeholder="Teléfono" type="text" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label  class="col-sm-2 col-form-label">Domicilio:</label>
+                    <label class="col-sm-2 col-form-label">Domicilio:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="domicilio" placeholder="Domicilio">
+                        <input class="form-control" name="domicilio" placeholder="Domicilio" type="text" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label  class="col-sm-2 col-form-label">Email:</label>
+                    <label class="col-sm-2 col-form-label">Salario:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="email" placeholder="Email">
+                        <input class="form-control" name="salario" placeholder="Salario" type="text" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label  class="col-sm-2 col-form-label">Salario:</label>
+                    <label class="col-sm-2 col-form-label">ID Gerente Global:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="salario" placeholder="Salario">
+                        <select class="form-control" name="id_gerente_global" style="padding: 0px;" required>
+                            <option selected="true" disabled="disabled">Seleccione el Gerente Global</option>
+                            {{#each idGG}}
+                                <option>{{id_usuario}}</option>
+                            {{/each}}
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label  class="col-sm-2 col-form-label">ID Gerente Global:</label>
+                    <label class="col-sm-2 col-form-label">ID Sucursal:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="id_gerente_global" placeholder="ID Gerente Global">
+                        <select class="form-control" name="id_sucursal" style="padding: 0px;" required>
+                            <option selected="true" disabled="disabled">Seleccione la Sucursal</option>                            
+                            {{#each idS}}
+                                <option>{{id_sucursal}}</option>
+                            {{/each}}
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label  class="col-sm-2 col-form-label">ID Sucursal:</label>
+                    <label class="col-sm-2 col-form-label">Email:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="id_sucursal" placeholder="ID Sucursal">
+                        <input class="form-control" name="email" placeholder="Email" type="email" required>
                     </div>
                 </div>
-                 <button type="submit" class="btn btn-success btn-lg">Agregar</button>
-            </form>    
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Constraseña:</label>
+                    <div class="col-sm-4">
+                        <input class="form-control" name="password" placeholder="Constraseña" type="password" required>
+                    </div>
+                </div>
+                <input hidden type="text" name="tipo" value="Gerente de Agencia">
+                <button type="submit" class="btn btn-success btn-lg">Agregar</button>
+            </form>
         </section>
     </section>
 </body>

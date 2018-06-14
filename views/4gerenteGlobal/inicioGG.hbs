@@ -9,7 +9,7 @@
                     Menú
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <button class="dropdown-item" type="button">Cerrar Sesión</button>
+                    <a href="/logout" class="dropdown-item">Cerrar Sesión</a>
                 </div>
             </div>
         </h5>
@@ -22,10 +22,10 @@
         <a href="/inicioGA/gerentesAgencia"><button type="button" class="btn btn-info btn-lg">Gerentes de Agencia</button></a>
     </section>
 
-    <section style="justify-content:center; width:100%;">
+    <section style="justify-content:center; width:100%; margin-bottom: 100px;">
         <section style="justify-content:center; width:80%; margin:auto;">
             {{#each gerenteGlobal}}
-            <form>
+            <form style="margin-bottom: 100px;">
                 <div style="display: -webkit-box">
                     <h3 style="margin:10px;">Perfil</h3>
                     <i data-feather="user" style="margin: 1em;"></i>
@@ -34,7 +34,7 @@
                 <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">ID Gerente Global:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" value="{{id_gerente_global}}" disabled>
+                    <input class="form-control" value="{{id_usuario}}" disabled>
                     </div>
                 </div>
                 <div class="form-group row">

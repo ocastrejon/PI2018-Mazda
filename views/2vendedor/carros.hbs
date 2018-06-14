@@ -1,4 +1,9 @@
 {{> header }}
+<style>
+    .carro {
+    pointer-events: none;
+}
+</style>
 
 <body style="width: 98.9vw; height:100vh">
     <section class="menuBar">
@@ -9,8 +14,8 @@
                     Menú
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="/inicioV"><button class="dropdown-item" type="button">Perfil</button></a>
-                    <button class="dropdown-item" type="button">Cerrar Sesión</button>
+                    <a href="/inicioV" class="dropdown-item">Perfil</a>
+                    <a href="/logout" class="dropdown-item">Cerrar Sesión</a>
                 </div>
             </div>
         </h5>
@@ -20,34 +25,59 @@
         <a href="/inicioV"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
     </section>
 
-    <section>
+    <section style="margin-bottom: 100px;">
         <table class="table">
             <thead class="thead-light">
                 <tr>
-                <th scope="col">ID Carro</th>
-                <th scope="col">Marca</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Modelo</th>
                 <th scope="col">Versión</th>
                 <th scope="col">Transmisión</th>
                 <th scope="col">Color</th>
-                <th scope="col">Número de Serie</th>
                 <th scope="col">Status</th>
+                <th scope="col">Acciones</th>                
                 </tr>
             </thead>
             <tbody>
                 {{#each carros}}
                 <tr>
-                {{!-- <th scope="row"></th> --}}
-                <td>{{id_carro}}</td>
-                <td>{{marca}}</td>
                 <td>{{nombre}}</td>
                 <td>{{modelo}}</td>
                 <td>{{version}}</td>
                 <td>{{transmision}}</td>
                 <td>{{color}}</td>
-                <td>{{numero_serie}}</td>
                 <td>{{statuss}}</td>
+                <td>
+                    <a data-toggle="modal" data-target="#myModal" style="vertical-align: text-top;text-decoration-line: none; color:black;"
+                            data-toggle="tooltip" data-placement="top" title="Detalles del Auto">
+                            <i class="carro" data-feather="truck" style="vertical-align: bottom; margin-right: 5px;"></i>
+                            <input hidden name="id_carro" value="{{id_carro}}">                
+                    </a>
+                    {{!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    {{id_carro}}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+
+
+
+                    {{!-- <a href="/clientes/modificarCliente/{{id_cliente}}" style="vertical-align: text-top;text-decoration-line: none; color:black;"
+                            data-toggle="tooltip" data-placement="top" title="Editar Cliente">
+                            <i data-feather="edit" style="vertical-align: bottom; margin-right: 5px;"></i>
+                        </a> --}}
+                </td>
                 </tr>
                 {{/each}}
             </tbody>
@@ -55,3 +85,9 @@
     </section>
 </body>
 {{> footer}}
+<script src="../../assets/javascripts/modalCarros.js"></script>
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

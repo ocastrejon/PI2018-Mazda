@@ -7,6 +7,12 @@
     "dev": "cls & nodemon ./bin/www"
   },
   "dependencies": {
+    "passport": "^0.2.2",
+    "passport-local": "^1.0.0",
+    "express-session": "^1.11.3",
+    "connect-flash": "^0.1.1",
+    "body-parser": "^1.13.1",
+    "bcrypt-nodejs": "0.0.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",

@@ -10,8 +10,8 @@
                     Menú
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="/inicioGG"><button class="dropdown-item" type="button">Perfil</button></a>
-                    <button class="dropdown-item" type="button">Cerrar Sesión</button>
+                    <a href="/inicioGG" class="dropdown-item">Perfil</a>
+                    <a href="/logout" class="dropdown-item">Cerrar Sesión</a>
                 </div>
             </div>
         </h5>
@@ -22,7 +22,7 @@
     </section>
 
 
-    <section style="justify-content:center; width:100%;">
+    <section style="justify-content:center; width:100%; margin-bottom: 100px;">
         <section style="justify-content:center; width:80%; margin:auto;">
             <form action="/sucursales/editarSucursal" method="POST">
             {{#each sucursal}}
@@ -34,34 +34,34 @@
                 <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">ID Sucursal:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="id_sucursal" value="{{id_sucursal}}">
+                    <input class="form-control" name="id_sucursal" value="{{id_sucursal}}" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Direccion:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="direccion" value="{{direccion}}" >
+                    <input class="form-control" name="direccion" value="{{direccion}}" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Municipio:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="municipio" value="{{municipio}}" >
+                    <input class="form-control" name="municipio" value="{{municipio}}" required>
                     </div>
                 </div><div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Estado:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="estado" value="{{estado}}" >
+                    <input class="form-control" name="estado" value="{{estado}}" required>
                     </div>
                 </div><div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Código Postal:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="codigo_postal" value="{{codigo_postal}}" >
+                    <input class="form-control" name="codigo_postal" value="{{codigo_postal}}" required>
                     </div>
                 </div></div><div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Region:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="region" value="{{region}}">
+                    <input class="form-control" name="region" value="{{region}}" required>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-warning btn-lg">Guardar</button>

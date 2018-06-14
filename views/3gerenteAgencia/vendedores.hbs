@@ -9,8 +9,8 @@
                     Menú
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="/inicioGA"><button class="dropdown-item" type="button">Perfil</button></a>
-                    <button class="dropdown-item" type="button">Cerrar Sesión</button>
+                    <a href="/inicioGA" class="dropdown-item">Perfil</a>
+                    <a href="/logout" class="dropdown-item">Cerrar Sesión</a>
                 </div>
             </div>
         </h5>
@@ -21,7 +21,7 @@
         <a href="/inicioV/vendedores/altaVendedor"><button type="button" class="btn btn-success btn-lg">Nuevo</button></a>
     </section>
 
-    <section>
+    <section style="margin-bottom: 100px;">
         <table class="table" id="tablaVendedores">
             <thead class="thead-light">
                 <tr>
@@ -39,7 +39,7 @@
                 {{#each vendedores}}
                 <tr>
                 {{!-- <th scope="row"></th> --}}
-                    <td id="id_vendedor">{{id_vendedor}}</td>
+                    <td id="id_usuario">{{id_usuario}}</td>
                     <td>{{nombre}}</td>
                     <td>{{telefono}}</td>
                     <td>{{email}}</td>
@@ -47,7 +47,7 @@
                     <td>{{salario}}</td>
                     <td>{{id_gerente_agencia}}</td>
                     <td>
-                            <a href="/inicioV/vendedores/modificarVendedor/{{id_vendedor}}" style="vertical-align: text-top;text-decoration-line: none; color:black;">
+                            <a href="/inicioV/vendedores/modificarVendedor/{{id_usuario}}" style="vertical-align: text-top;text-decoration-line: none; color:black;">
                                 <i data-feather="edit" style="vertical-align: bottom; margin-right: 5px;"></i>
                                 Editar
                             </a>
