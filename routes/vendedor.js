@@ -60,7 +60,7 @@ router
 
         // GUARDADO DE DATOS DE UN VENDEDOR 
             .post('/vendedores/altaVendedor', passport.authenticate('local-signup', { failureFlash: true }) , (req, res)=>{
-                if (req.user == undefined || req.user.tipo != 'Gerente de Agencia') {
+                if (req.user == undefined) {
                     res.render('index');
                 } else {
                     const db = require('../database/config');
@@ -97,9 +97,12 @@ router
                     let respuesta = {res: false};
                     let id = req.body.id;
                     db.query('DELETE FROM vendedor WHERE id_usuario = ?', id, function(err, rows, fields){
-                        if(err) throw err;
-                        respuesta.res = true;
-                        res.json(respuesta);
+                        if(err) {
+                            res.json({message:'Error'})
+                        } else {
+                            respuesta.res = true;
+                            res.json(respuesta);
+                        }
                     });
                 }    
             })
@@ -125,7 +128,7 @@ router
             })
         
             .post('/vendedores/editarVendedor', (req, res)=>{
-                if (req.user == undefined || req.user.tipo != 'Gerente de Agencia') {
+                if (req.user == undefined) {
                     res.render('index');
                 } else {
                     const db = require('.././database/config');  

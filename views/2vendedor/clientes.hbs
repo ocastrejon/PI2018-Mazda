@@ -26,14 +26,14 @@
         </a>
     </section>
 
-    <div style="margin: 1em;">
+    {{!-- <div style="margin: 1em;">
         <div class="input-group" style="width:30%; margin: auto;">
             <input type="text" id="inputBuscar" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Buscar Nombre">
             <div class="input-group-append">
                 <button type="button" id="buscar" class="btn btn-outline-secondary">Buscar</button>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <section style="margin-bottom: 100px;">
         <table class="table" id="tablaClientes">
@@ -44,6 +44,7 @@
                     <th scope="col">Teléfono</th>
                     <th scope="col">Email</th>
                     <th scope="col">Domicilio</th>
+                    <th scope="col">Movimientos</th>
                     <th scope="col">ID Vendedor</th>
                     <th scope="col">Acciones</th>
                 </tr>
@@ -58,6 +59,7 @@
                     <td>{{telefono}}</td>
                     <td>{{email}}</td>
                     <td>{{domicilio}}</td>
+                    <td>{{movimientos}}</td>
                     <td>{{id_vendedor}}</td>
                     <td>
                         <a href="" style="vertical-align: text-top; text-decoration-line: none; color:black;" data-toggle="tooltip" data-placement="top"

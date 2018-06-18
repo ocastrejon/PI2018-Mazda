@@ -49,6 +49,7 @@ router
 							telefono: req.body.telefono,
 							email: req.body.email,
 							domicilio: req.body.domicilio,
+							movimientos: req.body.movimientos,
 							id_vendedor: idV
 						}
 						
@@ -107,9 +108,10 @@ router
 						telefono: req.body.telefono,
 						domicilio: req.body.domicilio,
 						email: req.body.email,
+						movimientos: req.body.movimientos,
 						id_vendedor: req.body.id_vendedor
 					};
-					console.log(req.body);
+					console.log(cliente);
 			
 					db.query('UPDATE cliente SET ? WHERE ?', [cliente, {id_cliente: req.body.id_cliente}], (err, rows, fields)=> {
 						if(err) throw err;

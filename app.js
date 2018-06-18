@@ -25,6 +25,7 @@ var indexRouterGAgencia = require('./routes/gAgencia');
 var indexRouterGGlobal = require('./routes/gGlobal');
 var indexRouterCarros = require('./routes/carros');
 var indexRouterLogin = require('./routes/routes');
+var indexRouterCompras = require('./routes/compras');
 
 
 
@@ -70,6 +71,7 @@ app.use('/inicioGG', indexRouterGGlobal);
 app.use('/carros', indexRouterCarros);
 app.use('/sucursales', indexRouterSucursales);
 app.use('/', indexRouterLogin);
+app.use('/compras', indexRouterCompras);
 
 
 // catch 404 and forward to error handler ------------

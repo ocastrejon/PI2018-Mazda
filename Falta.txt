@@ -1,0 +1,9 @@
+MODIFICAR CLIENTE:
+    un get para elegir el id del vendedor a la hora de editar el CLIENTE
+
+MODIFICAR vendedor:
+    lo mismo que el anterior
+
+MODIFICAR GERENTE AGENCIA:
+    lo mismo que el anterior
+

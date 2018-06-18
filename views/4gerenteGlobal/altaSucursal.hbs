@@ -50,18 +50,36 @@
                 <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Código Postal:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="codigo_postal" placeholder="Código Postal" required>
+                    <input class="form-control" name="codigo_postal" placeholder="Código Postal" required onkeypress="return numero(event)">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Región:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="region" placeholder="Región" required>
+                    <input class="form-control" name="region" placeholder="Región" required onkeypress="return numero(event)">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-success btn-lg">Agregar</button>
             </form>    
         </section>
     </section>
+
+    <script>
+        //onkeypress="return numero(event)"
+        function numero(e){
+            tecla = (document.all) ? e.keyCode : e.which;
+
+            //Tecla de retroceso para borrar, siempre la permite
+            if (tecla==8){
+                return true;
+            }
+                
+            // Patron de entrada, en este caso solo acepta numeros
+            patron =/[0-9]/;
+            tecla_final = String.fromCharCode(tecla);
+            return patron.test(tecla_final);
+        }
+    </script>
+
 </body>
 {{> footer}}

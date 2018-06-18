@@ -49,19 +49,17 @@ module.exports = function (passport) {
             passReqToCallback: true // allows us to pass back the entire request to the callback
         },
             function (req, email, password, done) {
-                // console.log()
                 
-
+                
                 // find a user whose email is the same as the forms email
                 // we are checking to see if the user trying to login already exists
                 connection.query("SELECT * FROM usuario WHERE email = ?", [email], function (err, rows) {
                     
-                    
                     if (err) return done(err);
                     if (rows.length) {
                         
-                        
                         return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
+                        
                     } else {
                         
                         
@@ -78,7 +76,7 @@ module.exports = function (passport) {
                         connection.query(insertQuery, [newUserMysql.email, newUserMysql.password, req.body.tipo], function (err, rows) {
                             
                             
-                            if(err) throw err;
+                            if(err) alert('Correo existente!');
                             newUserMysql.id = rows.insertId;
 
                             return done(null, newUserMysql);

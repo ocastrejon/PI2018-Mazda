@@ -76,11 +76,11 @@ router
         })
 
 
-
+        // gerentesAgencia/altaGerenteAgencia
         // =============================================================================================
         // ALTA DE UN GERENTE DE AGENCIA 
         .get('/gerentesAgencia/altaGerenteAgencia', (req, res) => {
-            if (req.user == undefined || req.user.tipo != 'Gerente Global') {
+            if (req.user == undefined) {
                 res.render('index');
             } else {
                 const db = require('../database/config');
@@ -91,19 +91,22 @@ router
                         if (err) throw err;
                         let idS = rows2;
                         
-                        res.render('4gerenteGlobal/altaGerente', {idGG: idGG}, {idS: idS});
+                        res.render('4gerenteGlobal/altaGerente', {idGG: idGG, idS: idS});
                     })
                 });
             }
         })
-
+        
         // GUARDADO DE DATOS DE UN GERENTE DE AGENCIA 
         .post('/gerentesAgencia/altaGerenteAgencia', passport.authenticate('local-signup', { failureFlash: true }), (req, res) => {
-            if (req.user == undefined || req.user.tipo != 'Gerente Global') {
+            console.log('Entró al metodo Post de alta gerente Agencia');
+            
+            if (req.user == undefined) {
                 res.render('index');
             } else {
                 const db = require('../database/config');
                 db.query('select id_usuario from usuario order by id_usuario desc limit 1', (err, rows, fields) => {
+                    if(err) throw err;
                     let userID = rows[0].id_usuario;
 
                     let gerenteAgencia = {
@@ -118,8 +121,11 @@ router
                     }
 
                     db.query('INSERT INTO gerente_agencia SET ?', gerenteAgencia, (err, rows, fields) => {
-                        if (err) throw err;
-                        res.redirect('/inicioGA/gerentesAgencia');
+                        if (err) {
+                            alert('Correo ya existente.')
+                        } else {
+                            res.redirect('/inicioGA/gerentesAgencia');
+                        }
                     });
                 })
             }
@@ -173,7 +179,7 @@ router
             } else {
                 const db = require('.././database/config');
                 let gerenteAgencia = {
-                    id_gerente_agencia: req.body.id_gerente_agencia,
+                    id_usuario: req.body.id_usuario,
                     nombre: req.body.nombre,
                     telefono: req.body.telefono,
                     domicilio: req.body.domicilio,
@@ -184,7 +190,7 @@ router
                 };
                 // console.log(req.body);
 
-                db.query('UPDATE gerente_agencia SET ? WHERE ?', [gerenteAgencia, { id_gerente_agencia: req.body.id_gerente_agencia }], (err, rows, fields) => {
+                db.query('UPDATE gerente_agencia SET ? WHERE ?', [gerenteAgencia, { id_usuario: req.body.id_usuario }], (err, rows, fields) => {
                     if (err) throw err;
                     res.redirect('/inicioGA/gerentesAgencia');
                 });

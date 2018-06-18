@@ -34,7 +34,7 @@
                 <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">ID Cliente:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="id_cliente" value="{{id_cliente}}" required>
+                    <input class="form-control" name="id_cliente" value="{{id_cliente}}" >
                     </div>
                 </div>
                 <div class="form-group row">
@@ -46,12 +46,12 @@
                 <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Teléfono:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="telefono" value="{{telefono}}" required>
+                    <input class="form-control" name="telefono" value="{{telefono}}" required onkeypress="return numero(event)">
                     </div>
                 </div><div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Email:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="email" value="{{email}}" required>
+                    <input type="email" class="form-control" name="email" value="{{email}}" required>
                     </div>
                 </div><div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Domicilio:</label>
@@ -64,11 +64,29 @@
                     <input class="form-control" name="id_vendedor" value="{{id_vendedor}}" required>
                     </div>
                 </div>
+                <input hidden name="movimientos" value="">
                 <button type="submit" class="btn btn-warning btn-lg">Guardar</button>
             {{/each}}
             </form>    
         </section>
     </section>
+
+    <script>
+        //onkeypress="return numero(event)"
+        function numero(e){
+            tecla = (document.all) ? e.keyCode : e.which;
+
+            //Tecla de retroceso para borrar, siempre la permite
+            if (tecla==8){
+                return true;
+            }
+                
+            // Patron de entrada, en este caso solo acepta numeros
+            patron =/[0-9]/;
+            tecla_final = String.fromCharCode(tecla);
+            return patron.test(tecla_final);
+        }
+    </script>
 
 </body>
 {{> footer}}

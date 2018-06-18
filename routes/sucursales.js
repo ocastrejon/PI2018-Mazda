@@ -68,7 +68,6 @@ router
                     let id = req.body.id;
                     db.query('DELETE FROM sucursal WHERE id_sucursal = ?', id, function(err, rows, fields){
                         if(err) {
-                            console.log('Error //////////////////////////////////////////////////////////////////////////7');
                             res.json({message:'Error'});      
                         } else {
                             respuesta.res = true;

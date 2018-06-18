@@ -34,7 +34,7 @@
                 <div class="form-group row">
                     <label  class="col-sm-2 col-form-label">ID Sucursal:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="id_sucursal" value="{{id_sucursal}}" required>
+                    <input hidden class="form-control" name="id_sucursal" value="{{id_sucursal}}" required>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -56,12 +56,12 @@
                 </div><div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Código Postal:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="codigo_postal" value="{{codigo_postal}}" required>
+                    <input class="form-control" name="codigo_postal" value="{{codigo_postal}}" required onkeypress="return numero(event)">
                     </div>
                 </div></div><div class="form-group row">
                     <label  class="col-sm-2 col-form-label">Region:</label>
                     <div class="col-sm-4">
-                    <input class="form-control" name="region" value="{{region}}" required>
+                    <input class="form-control" name="region" value="{{region}}" required onkeypress="return numero(event)">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-warning btn-lg">Guardar</button>
@@ -69,6 +69,24 @@
             </form>    
         </section>
     </section>
+
+    <script>
+        //onkeypress="return numero(event)"
+        function numero(e){
+            tecla = (document.all) ? e.keyCode : e.which;
+
+            //Tecla de retroceso para borrar, siempre la permite
+            if (tecla==8){
+                return true;
+            }
+                
+            // Patron de entrada, en este caso solo acepta numeros
+            patron =/[0-9]/;
+            tecla_final = String.fromCharCode(tecla);
+            return patron.test(tecla_final);
+        }
+    </script>
+
 </body>
 {{> footer}}
 {{!-- <script src="../../../assets/javascripts/jquery-3.3.1.js"></script> --}}

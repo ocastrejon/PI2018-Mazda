@@ -1,13 +1,13 @@
 {{> header }}
 <style>
     .carro {
-    pointer-events: none;
-}
+        pointer-events: none;
+    }
 </style>
 
 <body style="width: 98.9vw; height:100vh">
     <section class="menuBar">
-        <h5 class="card-header" style="    margin: 3px; margin-bottom: 20px; font-size: 31px; color:white;"> 
+        <h5 class="card-header" style="    margin: 3px; margin-bottom: 20px; font-size: 31px; color:white;">
             <img src="../../assets/images/logoBueno.jpg" style="width: 45px; margin-right: 10px;">Carros
             <div class="btn-group" style="float: right;">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -22,62 +22,40 @@
     </section>
 
     <section style='justify-content:center; margin: 2em;'>
-        <a href="/inicioV"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+        <a href="/inicioV">
+            <button type="button" class="btn btn-primary btn-lg">Regresar</button>
+        </a>
     </section>
 
     <section style="margin-bottom: 100px;">
         <table class="table">
             <thead class="thead-light">
                 <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Modelo</th>
-                <th scope="col">Versión</th>
-                <th scope="col">Transmisión</th>
-                <th scope="col">Color</th>
-                <th scope="col">Status</th>
-                <th scope="col">Acciones</th>                
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Versión</th>
+                    <th scope="col">Transmisión</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 {{#each carros}}
                 <tr>
-                <td>{{nombre}}</td>
-                <td>{{modelo}}</td>
-                <td>{{version}}</td>
-                <td>{{transmision}}</td>
-                <td>{{color}}</td>
-                <td>{{statuss}}</td>
-                <td>
-                    <a data-toggle="modal" data-target="#myModal" style="vertical-align: text-top;text-decoration-line: none; color:black;"
-                            data-toggle="tooltip" data-placement="top" title="Detalles del Auto">
+                    <td>{{nombre}}</td>
+                    <td>{{modelo}}</td>
+                    <td>{{version}}</td>
+                    <td>{{transmision}}</td>
+                    <td>{{color}}</td>
+                    <td>{{statuss}}</td>
+                    <td class="carroD">
+                        <input hidden name="id_carro" value="{{id_carro}}">
+                        <a data-toggle="modal" data-target="#myModal" style="vertical-align: text-top;text-decoration-line: none; color:black;" data-toggle="tooltip"
+                            data-placement="top" title="Detalles del Auto">
                             <i class="carro" data-feather="truck" style="vertical-align: bottom; margin-right: 5px;"></i>
-                            <input hidden name="id_carro" value="{{id_carro}}">                
-                    </a>
-                    {{!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                                </div>
-                                <div class="modal-body">
-                                    {{id_carro}}
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
-
-
-
-                    {{!-- <a href="/clientes/modificarCliente/{{id_cliente}}" style="vertical-align: text-top;text-decoration-line: none; color:black;"
-                            data-toggle="tooltip" data-placement="top" title="Editar Cliente">
-                            <i data-feather="edit" style="vertical-align: bottom; margin-right: 5px;"></i>
-                        </a> --}}
-                </td>
+                        </a>
+                    </td>
                 </tr>
                 {{/each}}
             </tbody>
@@ -85,9 +63,146 @@
     </section>
 </body>
 {{> footer}}
+
 <script src="../../assets/javascripts/modalCarros.js"></script>
 <script>
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
     });
 </script>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="myModalLabel">Detalles del Vehículo</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    {{!--
+                    <label class="col-sm-4 col-form-label">a/a:</label>
+                    <div class="col-sm-8">
+                        <input id="a" class="form-control" value="" disabled>
+                    </div> --}}
+                    <label class="col-sm-4 col-form-label">Bolsas de Aire:</label>
+                    <div class="col-sm-8">
+                        <input id="bolsas_de_aire" class="form-control" value="" disabled>
+                    </div>
+                    <label class="col-sm-4 col-form-label">Cilindros:</label>
+                    <div class="col-sm-8">
+                        <input id="cilindros" class="form-control" value="" disabled>
+                    </div>
+                    <label class="col-sm-4 col-form-label">Color:</label>
+                    <div class="col-sm-8">
+                        <input id="color" class="form-control" value="" disabled>
+                    </div>
+                    <label class="col-sm-4 col-form-label">Frenos:</label>
+                    <div class="col-sm-8">
+                        <input id="frenos" class="form-control" value="" disabled>
+                    </div>
+                    <label class="col-sm-4 col-form-label">Marca:</label>
+                    <div class="col-sm-8">
+                        <input id="marca" class="form-control" value="" disabled>
+                    </div>
+                    <label class="col-sm-4 col-form-label">Nombre:</label>
+                    <div class="col-sm-8">
+                        <input id="nombre" class="form-control" value="" disabled>
+                    </div>
+                    <label class="col-sm-4 col-form-label">Modelo:</label>
+                    <div class="col-sm-8">
+                        <input id="modelo" class="form-control" value="" disabled>
+                    </div>
+                    <label class="col-sm-4 col-form-label">Numero de Serie:</label>
+                    <div class="col-sm-8">
+                        <input id="numero_serie" class="form-control" value="" disabled>
+                    </div>
+                    <label class="col-sm-4 col-form-label">Precio:</label>
+                    <div class="col-sm-8">
+                        <input id="precio" class="form-control" value="$" disabled>
+                    </div>
+                    <label class="col-sm-4 col-form-label">Statuss:</label>
+                    <div class="col-sm-8">
+                        <input id="statuss" class="form-control" value="" disabled>
+                    </div>
+                    <label class="col-sm-4 col-form-label">Transmisión:</label>
+                    <div class="col-sm-8">
+                        <input id="transmision" class="form-control" value="" disabled>
+                    </div>
+                    <label class="col-sm-4 col-form-label">Version:</label>
+                    <div class="col-sm-8">
+                        <input id="version" class="form-control" value="" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="apartar" data-toggle="modal" data-target="#myModal1" style="vertical-align: text-top;text-decoration-line: none;"
+                    data-toggle="tooltip" data-placement="top" title="Apartar" type="button" class="btn btn-primary" data-dismiss="modal">Apartar</button>
+                <button id="comprar" data-toggle="modal" data-target="#myModal2" style="vertical-align: text-top;text-decoration-line: none;"
+                    data-toggle="tooltip" data-placement="top" title="Comprar" type="button" class="btn btn-success" data-dismiss="modal">Comprar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="myModalLabel">Apartar</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+            </div>
+            <h4 style="margin-left: 10px; ">Escoger cliente:</h4><br>
+            <div class="form-group row" style="margin-bottom: 400px;">
+                <select id="clientesApartar" class="form-control col-sm-6" name="cliente" style="padding: 0px; margin-left: 30px" required>
+                    <option selected="true" disabled="disabled">Seleccione al Cliente</option>
+                </select>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button id="aplicarApartar" type="button" class="btn btn-success" data-dismiss="modal">Aplicar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="myModalLabel">Comprar</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+            </div>
+            <h4 style="margin-left: 10px; ">Escoger cliente:</h4><br>
+            <div class="form-group row" style="margin-bottom: 400px;">
+                <select id="clientesComprar" class="form-control col-sm-6" name="cliente" style="padding: 0px; margin-left: 30px" required>
+                    <option selected="true" disabled="disabled">Seleccione al Cliente</option>
+                </select>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button id="aplicarComprar" type="button" class="btn btn-success" data-dismiss="modal">Comprar</button>
+            </div>
+        </div>
+    </div>
+</div>

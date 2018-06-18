@@ -1,6 +1,8 @@
-body {
-  
+html {
+    min-height: 100%;
+    position: relative;
 }
+
 body:after {
    content : "";
    display: block;
@@ -18,3 +20,4 @@ body:after {
 .menuBar{
  background-color: black;
 }
+

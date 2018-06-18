@@ -10,7 +10,10 @@ router
 					res.render('index');
 				} else {
 					const db = require('../database/config');
-					db.query('SELECT * FROM gerente_global WHERE id_usuario = 1', (err, rows, fields)=>{
+					let email = req.user.email;
+					db.query(`select u.id_usuario, g.nombre, g.telefono, u.email, g.domicilio, g.salario from usuario as u 
+								INNER join gerente_global as g on g.id_usuario = u.id_usuario
+								where u.email = ? `, email, (err, rows, fields)=>{
 						if(err) throw err;
 						gerenteGlobal = rows;
 						console.log(rows);
