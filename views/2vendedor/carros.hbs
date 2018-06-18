@@ -31,6 +31,7 @@
         <table class="table">
             <thead class="thead-light">
                 <tr>
+                    <th scope="col">Imagen</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Modelo</th>
                     <th scope="col">Versión</th>
@@ -43,6 +44,7 @@
             <tbody>
                 {{#each carros}}
                 <tr>
+                    <td><img src="../../assets/images/{{id_carro}}.png" width=210" height="120"></td>
                     <td>{{nombre}}</td>
                     <td>{{modelo}}</td>
                     <td>{{version}}</td>
